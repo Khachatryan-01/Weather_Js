@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/cloud.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.searchBox {
+    width: 350px;
+    height: 40%;
+    display: flex;
+    gap: 5px;
+    margin-right: 10%;
+    align-items: center;
+    background-color: #1270bdb3;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.search .loupIcon {
+    width: 25px;
+    height: 25px;
+    filter: invert(100%) opacity(0.7);
+    background-image: url("../images/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+.search input {
+    height: 100%;
+    flex: 1;
+    font-size: 17px;
+    margin-top: 3px;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.752);
+    background-color: transparent;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.496);
+    opacity: 1;
+}
+
+.todaysWeather {
+    width: 100%;
+    height: 33%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todaysWeather h2 {
+    font-size: 25px;
+}
+
+.todaysWeather p:nth-child(2) {
+    font-size: 50px;
+}
+
+.todaysWeather p:nth-child(4) {
+    margin-top: 5px;
+}
+
+.timeLine {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.infoContainer {
+    color: white;
+    border-radius: 15px;
+    background-color: #1270bdb3;
+    backdrop-filter: blur(10px);
+}
+
+.timeLineInfoContainer {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    height: 100%;
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.forecast {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forecastContainer {
+    width: 80%;
+    height: 95%;
+    display: flex;
+}
+
+.forecastDay {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.forecastInfoContainer {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecastBox {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #3C86CC;
+}
+
+.forecast p {
+    flex: 1;
+    text-align: center;
+}
+
+.airQualityAndWind {
+    flex: 1;
+}
+
+.precipitation {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-radius: 15px;
+    background-color: #1270bdb3;
+    backdrop-filter: blur(10px);
+}
