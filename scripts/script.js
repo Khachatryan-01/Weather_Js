@@ -1,0 +1,1 @@
+new Weather({ container: document.body });
