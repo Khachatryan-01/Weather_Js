@@ -3,7 +3,18 @@ class Weather extends Component {
         super({ container });
 
         this.searchContainer = new Wrapper({ className: "searchContainer", container: this.element })
-        this.search = new Search({ container: this.searchContainer.element });
+        this.search = new Search({
+            onSearch: () => {
+                this.todaysWeather.changeInfo(WeatherManager.getCurrentInfo());
+                this.timeLine.changeInfo(WeatherManager.getTimeLineInfo());
+                this.forecastWeather.changeInfo({
+                    forecast: WeatherManager.getForecastDayInfo(),
+                    airQuality: WeatherManager.getAirQualityInfo(),
+                    windInfo: WeatherManager.getWindInfo()
+                });
+            },
+            container: this.searchContainer.element
+        });
 
         this.todaysWeather = new TodaysWeather({ container: this.element });
 

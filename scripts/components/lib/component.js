@@ -48,4 +48,14 @@ class Component {
 
         container.append(this.element);
     }
+
+    setStyle(styles) {
+        
+        if (typeof styles === "object" && !Array.isArray(styles)) {
+            for (const styleName in styles) {
+                this.element.style[styleName] = styles[styleName];
+            }
+        }
+
+    }
 }
