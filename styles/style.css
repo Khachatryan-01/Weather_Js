@@ -5,26 +5,23 @@
     font-family: sans-serif;
 }
 
-.wrapper {
+weather {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url("../images/cloud.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #0e365b;
 }
 
-.search {
+.searchContainer {
     width: 100%;
     height: 12%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
 }
 
-.searchBox {
+search {
     width: 350px;
     height: 40%;
     display: flex;
@@ -37,17 +34,14 @@
     padding: 10px;
 }
 
-.search .loupIcon {
-    width: 25px;
-    height: 25px;
+search .searchIcon {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
     filter: invert(100%) opacity(0.7);
-    background-image: url("../images/search.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px 20px;
 }
 
-.search input {
+search input {
     height: 100%;
     flex: 1;
     font-size: 17px;
@@ -58,34 +52,34 @@
     background-color: transparent;
 }
 
-input::placeholder {
+search input::placeholder {
     color: rgba(255, 255, 255, 0.496);
     opacity: 1;
 }
 
-.todaysWeather {
+todaysWeather {
     width: 100%;
     height: 33%;
-    color: white;
+    color: rgba(255, 255, 255, 0.874);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.todaysWeather h2 {
+todaysWeather h2 {
     font-size: 25px;
 }
 
-.todaysWeather p:nth-child(2) {
+todaysWeather .weatherTemperature {
     font-size: 50px;
 }
 
-.todaysWeather p:nth-child(4) {
+todaysWeather .weatherTemperatureRange {
     margin-top: 5px;
 }
 
-.timeLine {
+.weatherTimeLineContainer {
     width: 100%;
     height: 15%;
     display: flex;
@@ -93,29 +87,41 @@ input::placeholder {
 }
 
 .infoContainer {
-    color: white;
+    color: rgba(255, 255, 255, 0.752);
     border-radius: 15px;
     background-color: #1270bdb3;
     backdrop-filter: blur(10px);
 }
 
-.timeLineInfoContainer {
+weatherTimeLine {
     width: 80%;
+    padding: 10px;
     display: flex;
     align-items: center;
 }
 
-.box {
-    height: 100%;
+weatherTimeLineItem {
     flex: 1;
-    color: white;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.752);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
 }
 
-.forecast {
+weatherTimeLineItem p {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+weatherTimeLineItem img {
+    width: 40px;
+    height: 40px;
+}
+
+.forecastWeatherContainer {
     width: 100%;
     height: 55%;
     display: flex;
@@ -123,20 +129,15 @@ input::placeholder {
     align-items: center;
 }
 
-.forecastContainer {
+forecastWeather {
     width: 80%;
     height: 95%;
+    gap: 10px;
     display: flex;
 }
 
-.forecastDay {
-    display: flex;
+forecastDaysWeather {
     flex: 1;
-    align-items: center;
-}
-
-.forecastInfoContainer {
-    width: 100%;
     height: 100%;
     padding: 15px;
     display: flex;
@@ -144,7 +145,7 @@ input::placeholder {
     align-items: center;
 }
 
-.forecastBox {
+forecastDaysWeatherItem {
     width: 100%;
     display: flex;
     flex: 1;
@@ -153,29 +154,122 @@ input::placeholder {
     border-bottom: 1px solid #3C86CC;
 }
 
-.forecast p {
+forecastDaysWeatherItem>* {
     flex: 1;
     text-align: center;
 }
 
-.airQualityAndWind {
-    flex: 1;
+forecastDaysWeatherItem img {
+    width: 50px;
+    height: 50px;
 }
 
-.precipitation {
-    display: flex;
-    flex: 1;
-    align-items: center;
+.headline {
+    font-size: 15px;
 }
 
-.map {
-    width: 100%;
-    height: 100%;
+airQualityAndWind {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+airQuality {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.qualityText {
+    font-size: 20px;
+}
+
+.qualityWrap {
+    position: relative;
+    height: 5px;
+    display: flex;
     align-items: center;
-    color: white;
-    border-radius: 15px;
-    background-color: #1270bdb3;
-    backdrop-filter: blur(10px);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #299766, #F79C3F, #C41B38, #811B33);
+}
+
+.circle {
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+wind {
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.windWrap {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.windWrapInfo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.windHeadline {
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.windBox1 {
+    flex: 1;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.windBox2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.windkph {
+    flex: 1;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.compas {
+    width: 60%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compasBackground {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+}
+
+.compasArrow {
+    position: absolute;
+    width: 25px;
+    height: 60px;
+    transition: 1s;
 }

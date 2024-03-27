@@ -5,158 +5,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="shortcut icon" href="./images/cloudy.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="./scripts/lib/defines.js"></script>
+    <script src="./scripts/lib/helper.js"></script>
+    
+    <script src="./scripts/components/lib/component.js"></script>
+    <script src="./scripts/components/lib/textComponent.js"></script>
+    <script src="./scripts/components/lib/input.js"></script>
+    <script src="./scripts/components/lib/text.js"></script>
+    <script src="./scripts/components/lib/headline.js"></script>
+    <script src="./scripts/components/lib/icon.js"></script>
+    <script src="./scripts/components/lib/wrapper.js"></script>
+
+    <script src="./scripts/weatherManager.js"></script>
+    <script src="./scripts/components/search.js"></script>
+    <script src="./scripts/components/todaysWeather.js"></script>
+    <script src="./scripts/components/weatherTimeLineItem.js"></script>
+    <script src="./scripts/components/weatherTimeLine.js"></script>
+    <script src="./scripts/components/forecastDaysWeatherItem.js"></script>
+    <script src="./scripts/components/forecastDaysWeather.js"></script>
+    <script src="./scripts/components/airQuality.js"></script>
+    <script src="./scripts/components/wind.js"></script>
+    <script src="./scripts/components/airQualityAndWind.js"></script>
+
+
+    <script src="./scripts/components/forecastWeather.js"></script>
+    <script src="./scripts/components/weather.js"></script>
+
+    <script defer src="./scripts/script.js"></script>
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <div class="search">
-            <div class="searchBox">
-                <div class="loupIcon"></div>
+    <!-- <div class="weather">
+        <div class="searchContainer">
+            <div class="search">
+                <img src="../images/search.svg" alt="#" class="searchIcon">
                 <input type="text" placeholder="Search...">
             </div>
         </div>
         <div class="todaysWeather">
-            <h2>Sonoma</h2>
-            <p>18°</p>
-            <p>Mostly Cloudy</p>
-            <p>L:12° H:20°</p>
+            <h2>London</h2>
+            <p class="weatherTemperature">18°</p>
+            <p class="weatherCondition">Mostly Cloudy</p>
+            <p class="weatherTemperatureRange">L:12° H:20°</p>
         </div>
-        <div class="timeLine">
-            <div class="infoContainer timeLineInfoContainer">
-                <div class="box">
+        <div class="weatherTimeLineContainer">
+            <div class="infoContainer weatherTimeLine">
+                <div class="weatherTimeLineItem">
                     <p>Now</p>
                     <p>Icon</p>
                     <p>15°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>10am</p>
                     <p>Icon</p>
                     <p>17°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>12pm</p>
                     <p>Icon</p>
                     <p>18°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>2px</p>
                     <p>Icon</p>
                     <p>18°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>4pm</p>
                     <p>Icon</p>
                     <p>19°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>6pm</p>
                     <p>Icon</p>
                     <p>20°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>8pm</p>
                     <p>Icon</p>
                     <p>18°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>8:34</p>
                     <p>Icon</p>
                     <p>Sunset</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>10pm</p>
                     <p>Icon</p>
                     <p>14°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>12am</p>
                     <p>Icon</p>
                     <p>12°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>2am</p>
                     <p>Icon</p>
                     <p>10°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>4am</p>
                     <p>Icon</p>
                     <p>10°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>6am</p>
                     <p>Icon</p>
                     <p>8°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>8am</p>
                     <p>Icon</p>
                     <p>10°</p>
                 </div>
 
-                <div class="box">
+                <div class="weatherTimeLineItem">
                     <p>10am</p>
                     <p>Icon</p>
                     <p>11°</p>
                 </div>
             </div>
         </div>
-        <div class="forecast">
-            <div class="forecastContainer">
-                <div class="forecastDay">
-                    <div class="infoContainer forecastInfoContainer">
-                        <div class="forecastBox">
-                            <p>Today</p>
-                            <p>icon</p>
-                            <p>12° ----- 20°</p>
-                        </div>
-                        <div class="forecastBox">
-                            <p>Tue</p>
-                            <p>icon</p>
-                            <p>11° ----- 22°</p>
-                        </div>
-                        <!-- <div class="separator"></div> -->
-                        <div class="forecastBox">
-                            <p>Wed</p>
-                            <p>icon</p>
-                            <p>10° ----- 21°</p>
-                        </div>
-                        <div class="forecastBox">
-                            <p>Thu</p>
-                            <p>icon</p>
-                            <p>10° ----- 23</p>
-                        </div>
-                        <div class="forecastBox">
-                            <p>Fri</p>
-                            <p>icon</p>
-                            <p>10° ----- 21°</p>
-                        </div>
-                        <div class="forecastBox">
-                            <p>Sat</p>
-                            <p>icon</p>
-                            <p>12° ----- 20°</p>
-                        </div>
-                        <div class="forecastBox">
-                            <p>Sun</p>
-                            <p>icon</p>
-                            <p>11° ----- 21°</p>
-                        </div>
+        <div class="forecastWeatherContainer">
+            <div class="forecastWeather">
+                <div class="infoContainer forecastDaysWeather">
+                    <div class="forecastDaysWeatherItem">
+                        <p>Today</p>
+                        <p>icon</p>
+                        <p>12° ----- 20°</p>
+                    </div>
+                    <div class="forecastDaysWeatherItem">
+                        <p>Tue</p>
+                        <p>icon</p>
+                        <p>11° ----- 22°</p>
+                    </div>
+                    <div class="forecastDaysWeatherItem">
+                        <p>Wed</p>
+                        <p>icon</p>
+                        <p>10° ----- 21°</p>
+                    </div>
+                    <div class="forecastDaysWeatherItem">
+                        <p>Thu</p>
+                        <p>icon</p>
+                        <p>10° ----- 23</p>
+                    </div>
+                    <div class="forecastDaysWeatherItem">
+                        <p>Fri</p>
+                        <p>icon</p>
+                        <p>10° ----- 21°</p>
+                    </div>
+                    <div class="forecastDaysWeatherItem">
+                        <p>Sat</p>
+                        <p>icon</p>
+                        <p>12° ----- 20°</p>
+                    </div>
+                    <div class="forecastDaysWeatherItem">
+                        <p>Sun</p>
+                        <p>icon</p>
+                        <p>11° ----- 21°</p>
                     </div>
                 </div>
                 <div class="airQualityAndWind">
@@ -168,7 +194,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
 </body>
 
