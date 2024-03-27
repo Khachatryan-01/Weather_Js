@@ -1,4 +1,4 @@
-class Headline extends Component {
+class Headline extends TextComponent {
     constructor({ text, className, container }) {
         super({
             tagName: "h2",

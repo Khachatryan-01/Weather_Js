@@ -26,6 +26,12 @@ class TodaysWeather extends Component {
             className: "weatherTemperatureRange",
             container: this.element
         });
+    }
 
+    changeInfo({ name, currTemp, condition, minTemp, maxTemp }) {
+        this.headline.changeText(name);
+        this.temperature.changeText(currTemp);
+        this.condition.changeText(condition);
+        this.temperatureRange.changeText(`L: ${minTemp}°  H: ${maxTemp}°`);
     }
 }

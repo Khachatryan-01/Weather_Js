@@ -11,9 +11,6 @@ weather {
     display: flex;
     flex-direction: column;
     background-color: #0e365b;
-    /* background-image: url("../images/96351704_10219289084409365_2062070556802416640_o-20200526-155447.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover; */
 }
 
 .searchContainer {
@@ -135,6 +132,7 @@ weatherTimeLineItem img {
 forecastWeather {
     width: 80%;
     height: 95%;
+    gap: 10px;
     display: flex;
 }
 
@@ -162,28 +160,116 @@ forecastDaysWeatherItem>* {
 }
 
 forecastDaysWeatherItem img {
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
 }
 
-.airQualityAndWind {
-    flex: 1;
+.headline {
+    font-size: 15px;
 }
 
-.precipitation {
-    display: flex;
-    flex: 1;
-    align-items: center;
-}
-
-.map {
-    width: 100%;
-    height: 100%;
+airQualityAndWind {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+airQuality {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.qualityText {
+    font-size: 20px;
+}
+
+.qualityWrap {
+    position: relative;
+    height: 5px;
+    display: flex;
     align-items: center;
-    color: rgba(255, 255, 255, 0.752);
-    border-radius: 15px;
-    background-color: #1270bdb3;
-    backdrop-filter: blur(10px);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #299766, #F79C3F, #C41B38, #811B33);
+}
+
+.circle {
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+wind {
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.windWrap {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.windWrapInfo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.windHeadline {
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.windBox1 {
+    flex: 1;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.windBox2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.windkph {
+    flex: 1;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.compas {
+    width: 60%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compasBackground {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+}
+
+.compasArrow {
+    position: absolute;
+    width: 25px;
+    height: 60px;
+    transition: 1s;
 }

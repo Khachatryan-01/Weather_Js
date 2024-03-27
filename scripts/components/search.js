@@ -1,5 +1,5 @@
 class Search extends Component {
-    constructor({ container }) {
+    constructor({ container, onSearch }) {
         super({ container });
 
         this.icon = new Icon({
@@ -7,11 +7,16 @@ class Search extends Component {
             alt: "Search Icon",
             className: "searchIcon",
             container: this.element
-        })
+        });
 
         this.input = new Input({
             type: "text",
             placeholder: "Search...",
+            events: {
+                change: (e) => {
+                    WeatherManager.search(e.target.value).then(onSearch);
+                }
+            },
             container: this.element
         })
     }

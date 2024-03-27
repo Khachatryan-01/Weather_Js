@@ -1,4 +1,4 @@
-class Text extends Component {
+class Text extends TextComponent {
     constructor({ text, className, container }) {
         super({
             tagName: "p",
